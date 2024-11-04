@@ -1,0 +1,6 @@
+#
+/.cph
+/.vscode
+/output
+*.bin
+*.exe
