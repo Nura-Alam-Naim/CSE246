@@ -16,19 +16,13 @@ ll partition(vl &v, ll l, ll r)
 {
     ll pivot = v[l];
     ll i = l, j = r;
-    do
+    while(i<j)
     {
-        do
-        {
-            i++;
-        } while (v[i] <= pivot);
-        do
-        {
-            j--;
-        } while (v[j] > pivot);
+        while (v[i] <= pivot)i++;
+        while (v[j] > pivot)j--;
         if (i < j)
             swap(v[i], v[j]);
-    } while (i < j);
+    }
     swap(v[l], v[j]);
     return j;
 }
