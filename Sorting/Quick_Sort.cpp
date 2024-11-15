@@ -34,13 +34,13 @@ ll partition(vl &v, ll l, ll h)
     swap(v[l], v[j]);
     return j;
 }
-void QuickSort(vl &v, ll l, ll h)
+void quickSort(vl &v, ll l, ll h)
 {
     if (l < h)
     {
         ll j = partition(v, l, h);
-        QuickSort(v, l, j);
-        QuickSort(v, j + 1, h);
+        quickSort(v, l, j);
+        quickSort(v, j + 1, h);
     }
 }
 void solve()
@@ -51,7 +51,7 @@ void solve()
         cout << v[i] << sp;
     cout << nl;
     cout << "Quick Sort: ";
-    QuickSort(v, 0, n);
+    quickSort(v, 0, n);
     for (auto i : v)
         cout << i << sp;
     cout << nl;
