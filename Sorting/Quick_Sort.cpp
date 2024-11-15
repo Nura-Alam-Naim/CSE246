@@ -12,27 +12,35 @@ typedef vector<ll> vl;
 #define ff first
 #define ss second
 const ll N = 1e6 + 1;
-ll partition(vl &v, ll l, ll r)
+ll partition(vl &v, ll l, ll h)
 {
     ll pivot = v[l];
-    ll i = l, j = r;
-    while(i<j)
+    ll i = l, j = h;
+    do
     {
-        while (v[i] <= pivot)i++;
-        while (v[j] > pivot)j--;
+        do
+        {
+            i++;
+        } while (v[i] <= pivot);
+        do
+        {
+            j--;
+        } while (v[j] > pivot);
+
         if (i < j)
             swap(v[i], v[j]);
-    }
+    } while (i < j);
+
     swap(v[l], v[j]);
     return j;
 }
-void quickSort(vl &v, ll l, ll r)
+void QuickSort(vl &v, ll l, ll h)
 {
-    if (l < r)
+    if (l < h)
     {
-        ll j = partition(v, l, r);
-        quickSort(v, l, j);
-        quickSort(v, j + 1, r);
+        ll j = partition(v, l, h);
+        QuickSort(v, l, j);
+        QuickSort(v, j + 1, h);
     }
 }
 void solve()
@@ -43,7 +51,7 @@ void solve()
         cout << v[i] << sp;
     cout << nl;
     cout << "Quick Sort: ";
-    quickSort(v, 0, n);
+    QuickSort(v, 0, n);
     for (auto i : v)
         cout << i << sp;
     cout << nl;
