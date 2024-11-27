@@ -35,8 +35,8 @@ double close(vp v, ll size, double d)
             if (dis(v[i], v[j]) < mn)
             {
                 mn = dis(v[i], v[j]);
-                closed[0] = v[i];
-                closed[1] = v[j];
+                // closed[0] = v[i];
+                // closed[1] = v[j];
             }
     return mn;
 }
@@ -67,7 +67,7 @@ double closestPath(vp v, ll l, ll r)
     double d = min(d1, d2);
     vp strip(r - l + 1);
     ll cnt = 0;
-    for (ll i = 0; i <= (r-l); i++)
+    for (ll i = l; i <= (r-l); i++)
         if (fabs(v[i].ff - v[mid].ff) < d)
             strip[cnt++] = v[i];
     double d3 = close(strip, cnt,d);
@@ -77,7 +77,7 @@ void solve()
 {
     //vp v = {{2, 3}, {12, 30}, {40, 50}, {5, 1}, {12, 10}, {3, 4}};
     //cout << "Pairs: " << nl;
-    vp v(6);
+    vp v(12);
     v[0] = make_pair(2, 3);
     v[1] = make_pair(12, 30);
     v[2] = make_pair(40, 50);

@@ -45,7 +45,7 @@ void quickSort(vl &v, ll l, ll h)
 }
 void solve()
 {
-    vl v = {100, 20, 1, 1, 50, 60, 2, 6, 7, 0, 8};
+    vl v = {8, 10, 11, 1, 9, 8, 7, 5};
     ll n = v.size();
     for (ll i = 0; i < n; i++)
         cout << v[i] << sp;
