@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/nuraalamnaim/Naim/Programming/CSE246/Project/output/Travelling_Planning'
+relocations:     []
+...

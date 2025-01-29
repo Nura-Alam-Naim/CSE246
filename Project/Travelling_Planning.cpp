@@ -10,8 +10,8 @@ typedef vector<ll> vl;
 #define pb push_back
 #define ff first
 #define ss second
-const ll N = 5;
-const ll M = 10;
+const ll N = 10;                                    // Nodes
+const ll M = 45;                                    // Edges: max: (N*(N-1))/2
 vector<vl> dis(N + 1, vl(N + 1, 0));
 vector<vl> cst(N + 1, vl(N + 1, 0));
 vector<vl> tim(N + 1, vl(N + 1, 0));
@@ -79,7 +79,7 @@ void print()
             cout << tim[i][j] << sp;
         cout << nl;
     }
-    cout << nl;
+    cout << nl << nl;
 }
 ll minFind(vector<bool> &visited, vl &dist)
 {
@@ -87,7 +87,7 @@ ll minFind(vector<bool> &visited, vl &dist)
     ll node = -1;
     for (ll i = 1; i <= N; i++)
     {
-        if (!visited[i] && dist[i] <= mn)
+        if (!visited[i] and dist[i] <= mn)
         {
             mn = dist[i];
             node = i;
@@ -150,13 +150,14 @@ void calc(vl &route, ll &tot_dis, ll &tot_tm, ll &tot_cst)
 }
 void shortest_distance()
 {
+    cout << "\n# Minimum Distance from source to target #" << nl;
     ll src, target;
-    // cout << "Enter your Source Node (Between 1 to " << N << ": ";
-    // cin >> src;
-    // cout << "Enter your Target Node (Between 1 to " << N << ": ";
-    // cin >> target;
     src = 1;
     target = 5;
+    cout << "Enter your Source Node (Between 1 to " << N << " ): ";
+    cin >> src;
+    cout << "Enter your Target Node (Between 1 to " << N << " ): ";
+    cin >> target;
     ll req = -1;
     vl route = dijstra(src, target, req, dis);
     if (req == -1)
@@ -174,15 +175,16 @@ void shortest_distance()
 }
 void minimum_time()
 {
+    cout << "\n# Miminum Required Time from source to target #" << nl;
     ll src, target;
-    // cout << "Enter your Source Node (Between 1 to " << N << ": ";
-    // cin >> src;
-    // cout << "Enter your Target Node (Between 1 to " << N << ": ";
-    // cin >> target;
     src = 1;
     target = 5;
+    cout << "Enter your Source Node (Between 1 to " << N << " ): ";
+    cin >> src;
+    cout << "Enter your Target Node (Between 1 to " << N << " ): ";
+    cin >> target;
     ll req = -1;
-    vl route = dijstra(src, target, req, dis);
+    vl route = dijstra(src, target, req, tim);
     if (req == -1)
     {
         cout << "No Path Exixts" << nl;
@@ -199,15 +201,16 @@ void minimum_time()
 }
 void minimum_cost()
 {
+    cout << "\n# Miminum Required Cost from source to target #" << nl;
     ll src, target;
-    // cout << "Enter your Source Node (Between 1 to " << N << ": ";
-    //  cin >> src;
-    //  cout << "Enter your Target Node (Between 1 to " << N << ": ";
-    //  cin >> target;
     src = 1;
     target = 5;
+    cout << "Enter your Source Node (Between 1 to " << N << " ): ";
+    cin >> src;
+    cout << "Enter your Target Node (Between 1 to " << N << " ): ";
+    cin >> target;
     ll req = -1;
-    vl route = dijstra(src, target, req, dis);
+    vl route = dijstra(src, target, req, cst);
     if (req == -1)
     {
         cout << "No Path Exixts" << nl;
@@ -231,12 +234,12 @@ int main()
     ll inp = 5;
     while (inp != 4)
     {
-        cout << "#################################################" << nl;
-        cout << "1 > Minimum Distance  from source to target" << nl;
-        cout << "2 > Miminum Required Time  from source to target" << nl;
-        cout << "3 > Miminum Required Cost  from source to target" << nl;
-        cout << "4 > EXIT" << nl;
-        cout << "####Enter Choice: ";
+        cout << "#####################################################" << nl;
+        cout << "1 -> Minimum Distance from source to target." << nl;
+        cout << "2 -> Miminum Required Time from source to target." << nl;
+        cout << "3 -> Miminum Required Cost from source to target." << nl;
+        cout << "4 -> EXIT." << nl;
+        cout << "*Enter Choice: ";
         cin >> inp;
         if (inp == 1)
             shortest_distance();
