@@ -11,7 +11,7 @@ typedef vector<ll> vl;
 #define ff first
 #define ss second
 const ll N = 10;                                    // Nodes
-const ll M = 45;                                    // Edges: max: (N*(N-1))/2
+const ll M = 15;                                    // Edges: max: (N*(N-1))/2
 vector<vl> dis(N + 1, vl(N + 1, 0));
 vector<vl> cst(N + 1, vl(N + 1, 0));
 vector<vl> tim(N + 1, vl(N + 1, 0));
@@ -239,7 +239,7 @@ int main()
         cout << "2 -> Miminum Required Time from source to target." << nl;
         cout << "3 -> Miminum Required Cost from source to target." << nl;
         cout << "4 -> EXIT." << nl;
-        cout << "*Enter Choice: ";
+        cout << "     Enter Choice: ";
         cin >> inp;
         if (inp == 1)
             shortest_distance();
