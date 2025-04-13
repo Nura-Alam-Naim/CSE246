@@ -155,8 +155,8 @@ void shortest_distance()
     // cin >> src;
     // cout << "Enter your Target Node (Between 1 to " << N << ": ";
     // cin >> target;
-    src = 1;
-    target = 5;
+    src = 3;
+    target = 9;
     ll req = -1;
     vl route = dijstra(src, target, req, dis);
     if (req == -1)
@@ -180,7 +180,7 @@ void minimum_time()
     // cout << "Enter your Target Node (Between 1 to " << N << ": ";
     // cin >> target;
     src = 1;
-    target = 5;
+    target = 7;
     ll req = -1;
     vl route = dijstra(src, target, req, tim);
     if (req == -1)
@@ -204,8 +204,8 @@ void minimum_cost()
     //  cin >> src;
     //  cout << "Enter your Target Node (Between 1 to " << N << ": ";
     //  cin >> target;
-    src = 1;
-    target = 5;
+    src = 8;
+    target = 3;
     ll req = -1;
     vl route = dijstra(src, target, req, cst);
     if (req == -1)
